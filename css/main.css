@@ -1,0 +1,277 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+section{
+    width:100%;
+    height:100vh;
+    background: url(../assets/shoot.jpg);
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+#overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#eeaf9d73;
+    z-index: 3;
+}
+.center{
+    position:absolute;
+    top:92px;
+    left:20px;
+}
+h1{
+    text-align:left;
+    font-size:70px;
+    padding-left:82px;
+    margin-top:0px;
+    color:rgba(255, 251, 251, 0.87);
+    z-index: 4;
+    font-family: 'Uncial Antiqua', cursive;
+    border-left:20px solid #d1825b;
+
+}
+/* slide */
+.slide{
+ width:426px;
+ height:310px;
+background:url(../assets/slide.jpg);
+transition: .4s;
+
+}
+
+.slide:hover{
+ background-position: 0 -320px;
+}
+/* end of slides */
+
+/* navs */
+:root{
+    --navs-hover:#8fb0a9;
+}
+
+ul{
+    position:absolute;
+    display:flex;
+    right:10px;
+    top:20px;
+}
+
+ul li{
+    list-style:none;
+}
+ul li a{
+    position:relative;
+    display: block;
+    text-decoration: none;
+    text-align:center;
+    margin: 0 25px;
+    font-size:30px;
+    color:#f8f4e7;
+    transition: 0.5s;
+    padding:5px 10px;
+}
+ul li a:hover{
+    background: var(--navs-hover);
+}
+
+/* navs hover */
+
+ul li a:before{
+    content:"";
+    position:absolute;
+    bottom:12px;
+    left:12px;
+    width:12px;
+    height:12px;
+    border:3px solid var(--navs-hover);
+    border-width: 0 0 3px 3px;
+    transition:.5s;
+    opacity:0;
+}
+/* hover beforedan evvel gelir, cunki point olan a'dir, before yox */
+ul li a:hover:before{ 
+    bottom:-8px;
+    left:-8px;
+    opacity:1;
+}
+
+/* borderlere sifir verende geri qalan hisseden fiqur kimi istifade etmek */
+ul li a:after{
+    content:"";
+    position:absolute;
+    top: 12px;
+    right:12px;
+    width:12px;
+    height:12px;
+    border:3px solid var(--navs-hover);
+    border-width: 3px 3px 0 0; 
+    transition:.5s;
+    opacity:0;
+}
+
+
+ul li a:hover:after{
+    top: -8px;
+    right: -8px;  
+    opacity:1; 
+}
+
+/* end of navs */
+
+/* text */
+
+.text{
+    background:rgba(129, 100, 100, 0.534);
+    display:inline-block;
+    height:50px;
+    width:850px;
+    position: absolute;
+    left:470px;
+    border-radius:20px;
+    padding:10px;
+  
+}
+p{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    text-shadow:1px 5px 5px #8fb0a9;
+    max-width:400px;
+    margin-top:-30px;
+}
+/* end of text */
+
+/* spinners */
+
+.spinners{
+    position: absolute;
+    width:100px;
+    height: 100px;
+    border:8px solid transparent;
+    border-bottom:8px solid #c5bc6a;
+    border-top:8px solid #e15546;
+    border-radius:50%;
+    animation:animate 2s linear infinite;
+    top:130px;
+    left:80%;
+    
+
+}
+.spinners:before{
+    content:"";
+    position:absolute;
+    top:10px; /*before parent olan div'e gore hesablayir*/
+    left:10px;
+    bottom:10px;
+    right:10px;
+    border:8px solid transparent;
+    border-bottom: 8px solid #efe7c5;
+    border-top: 8px solid #b3c5ab;
+    border-radius:50%;
+    animation: animate 1.8s linear infinite;
+
+}
+.spinners:after{
+    content:"";
+    position:absolute;
+    top:24px; /*before parent olan div'e gore hesablayir*/
+    left:24px;
+    bottom:24px;
+    right:24px;
+    border:8px solid transparent;
+    border-bottom: 8px solid #416d78;
+    border-top: 8px solid #ead065;
+    border-radius:50%;
+    animation: animate 2.5s linear infinite;
+
+}
+@keyframes animate
+{
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(360deg);
+    }
+}
+/* end of spinners */
+
+h2{
+    position: absolute;
+    text-transform: uppercase;
+    font-family: Cambria, 'Times New Roman', serif;
+    margin:0;
+    padding:0;
+    top:450px;
+    left:420px;
+    letter-spacing: 5px;
+    background-color:rgb(221, 107, 107);
+    color:rgb(221, 107, 107);
+    height: 30px;
+}
+
+h2:before{
+    content:attr(data-text);
+    position:absolute;
+    width:100%;
+    height: 100%;
+    color:#416d78;
+    top:0;
+    left:0;
+    border-right:3px solid rgba(9, 100, 100, 0.534);
+    animation: type 12s linear infinite;
+    overflow:hidden;
+    white-space: nowrap;
+    
+}
+
+@keyframes type {
+    0%{
+        width:0;
+    }
+   
+    25%{
+        width:45%;
+    }
+    45%{
+        width:90%;
+    }
+    64%{
+        width:55%;
+    }
+    76%{
+        width:99%;
+    }
+    97%{
+        width:100%
+    }
+    100%{
+        width:0;
+    }
+}
+#sual{
+    width:200px;
+    height:200px;
+    background-image: url("../assets/sual.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size:cover;
+    opacity:0.6;
+    top:320px;
+    position:absolute;
+    right: 115px;
+
+}
+
+
+
+
